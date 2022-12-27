@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Endearing Moments - Manujaya Portfolio`,
+    title: `Endearing Moments`,
     description: `Photography portfolio website - Manujaya Senadeera`,
     author: `OpenArchitex`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -37,6 +37,22 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Roboto`,
+            file: `https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap`,
+          },
+        ],
       },
     },
   ],
