@@ -18,21 +18,26 @@ const getImages = images => {
   })
 }
 
+const getArraySlices = array => {
+  const slices = []
+  for (let i = 0; i + 3 <= array.length; i += 3) {
+    slices.push(array.slice(i, i + 3))
+  }
+  return slices
+}
+
 const Gallery = ({ location, data }) => {
   const images = data?.allFile.nodes.filter(node =>
     node.relativePath.includes(location.state?.folderName)
   )
+  const arraySlices = getArraySlices(images)
+
   return (
     <Layout>
       <Container>
         <h2 className="text-center py-5">{location.state?.folderName}</h2>
         <Container>
-          <Row>{getImages(images?.slice(0, 3))}</Row>
-          <Row>{getImages(images?.slice(3, 6))}</Row>
-          <Row>{getImages(images?.slice(6, 9))}</Row>
-          <Row>{getImages(images?.slice(9, 12))}</Row>
-          <Row>{getImages(images?.slice(12, 15))}</Row>
-          <Row>{getImages(images?.slice(15, 18))}</Row>
+          {images && arraySlices.map(slice => <Row>{getImages(slice)}</Row>)}
         </Container>
       </Container>
     </Layout>

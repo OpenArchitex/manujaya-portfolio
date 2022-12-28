@@ -25,23 +25,42 @@
   position: relative;
 }
 
-.featureImage:hover {
-  opacity: 0.2;
-  cursor: pointer;
+@media (hover: hover) {
+  .featureImage:hover {
+    opacity: 0.2;
+    cursor: pointer;
+  }
+
+  .featureImageTitle {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: grey;
+    font-weight: bold;
+    font-family: "cursive", sans-serif;
+    font-size: 35px;
+  }
+
+  .featureImageContainer:hover .featureImageTitle {
+    display: block;
+  }
 }
 
-.featureImageTitle {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: grey;
-  font-weight: bold;
-  font-family: "cursive", sans-serif;
-  font-size: 35px;
-}
+@media (hover: none) {
+  .featureImage {
+    opacity: 0.3;
+  }
 
-.featureImageContainer:hover .featureImageTitle {
-  display: block;
+  .featureImageTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-family: "cursive", sans-serif;
+    font-size: 35px;
+  }
 }
