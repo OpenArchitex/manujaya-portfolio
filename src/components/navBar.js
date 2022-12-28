@@ -1,16 +1,20 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Navbar from "react-bootstrap/Navbar"
-import { Container, Nav } from "react-bootstrap"
+import { Container, Image, Nav } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import favicon from "../images/favicon.svg"
 
 const NavBar = ({ siteTitle }) => (
   <Navbar bg="none" expand="lg">
     <Container fluid className="m-2">
       <Navbar.Brand>
-        <Link to="/" className="brand-name">
-          {siteTitle}
-        </Link>
+        <Container styles={{ display: "flex" }}>
+          <Image src={favicon} width="50px" />
+          <Link to="/" className="brand-name d-none d-sm-block pt-2 px-2">
+            {siteTitle}
+          </Link>
+        </Container>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">

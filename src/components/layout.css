@@ -12,3 +12,32 @@
   font-weight: 500;
   color: #111111;
 }
+
+.featureImageTitle {
+  z-index: -1;
+}
+
+.featureImageContainer {
+  position: relative;
+}
+
+.featureImage:hover {
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.featureImageTitle {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: grey;
+  font-weight: bold;
+  font-family: "cursive", sans-serif;
+  font-size: 35px;
+}
+
+.featureImageContainer:hover .featureImageTitle {
+  display: block;
+}
