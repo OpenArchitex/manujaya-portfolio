@@ -9,8 +9,8 @@ const NavBar = ({ siteTitle }) => (
   <Navbar bg="none" expand="lg">
     <Container fluid className="m-2">
       <Navbar.Brand>
-        <Container styles={{ display: "flex" }}>
-          <Image src={favicon} width="50px" />
+        <Container className="navbar-brand">
+          <Image className="align-self-start" src={favicon} width="50px" />
           <Link to="/" className="brand-name d-none d-sm-block pt-2 px-2">
             {siteTitle}
           </Link>

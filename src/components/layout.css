@@ -8,6 +8,10 @@
   font-weight: 300;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .brand-name:hover {
   font-weight: 500;
   color: #111111;
