@@ -52,6 +52,10 @@ module.exports = {
             name: `Roboto`,
             file: `https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap`,
           },
+          {
+            name: `Dancing Script`,
+            file: `https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap`,
+          }
         ],
       },
     },

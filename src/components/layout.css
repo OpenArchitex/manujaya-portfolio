@@ -38,8 +38,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: grey;
-    font-weight: bold;
-    font-family: "cursive", sans-serif;
+    font-weight: 700;
+    font-family: "Dancing Script", cursive;
     font-size: 35px;
   }
 
@@ -59,8 +59,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
-    font-weight: bold;
-    font-family: "cursive", sans-serif;
+    font-weight: 700;
+    font-family: "Dancing Script", cursive;
     font-size: 35px;
   }
 }
