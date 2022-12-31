@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fontAwesomeIcons } from "../helpers/fontawesomeicons"
 import { Container } from "react-bootstrap"
-import { Link } from "gatsby"
+import {Link, Script} from "gatsby"
 
 library.add(fontAwesomeIcons)
 
@@ -31,6 +31,7 @@ const About = () => (
 
         <Container className="py-4 px-0">
           <h4>Get in touch.</h4>
+          <Script type="text/javascript" src="https://static.zcal.co/embed/v1/embed.js"></Script>
           <div className="zcal-inline-widget"><a href="https://zcal.co/i/8w976dUD">Discovery Call - Schedule a meeting</a></div>
         </Container>
       </Container>
@@ -40,7 +41,6 @@ const About = () => (
 
 export const Head = () => <>
   <Seo title="About" />
-  <script type="text/javascript" async src="https://static.zcal.co/embed/v1/embed.js"></script>
 </>
 
 export default About
