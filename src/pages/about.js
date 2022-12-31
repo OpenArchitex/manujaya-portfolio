@@ -5,13 +5,13 @@ import Seo from "../components/seo"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fontAwesomeIcons } from "../helpers/fontawesomeicons"
 import { Container } from "react-bootstrap"
-import {Link, Script} from "gatsby"
+import { Script } from "gatsby"
 
 library.add(fontAwesomeIcons)
 
 const About = () => (
   <Layout>
-    <Container class="py-5">
+    <Container className="pt-3">
       <h2 className="text-center">
         Award-winning photographer based in St.John's, Newfoundland.
       </h2>
@@ -31,16 +31,25 @@ const About = () => (
 
         <Container className="py-4 px-0">
           <h4>Get in touch.</h4>
-          <Script type="text/javascript" src="https://static.zcal.co/embed/v1/embed.js"></Script>
-          <div className="zcal-inline-widget"><a href="https://zcal.co/i/8w976dUD">Discovery Call - Schedule a meeting</a></div>
+          <Script
+            type="text/javascript"
+            src="https://static.zcal.co/embed/v1/embed.js"
+          ></Script>
+          <div className="zcal-inline-widget">
+            <a href="https://zcal.co/i/8w976dUD">
+              Discovery Call - Schedule a meeting
+            </a>
+          </div>
         </Container>
       </Container>
     </Container>
   </Layout>
 )
 
-export const Head = () => <>
-  <Seo title="About" />
-</>
+export const Head = () => (
+  <>
+    <Seo title="About" />
+  </>
+)
 
 export default About

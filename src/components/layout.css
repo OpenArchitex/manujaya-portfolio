@@ -1,20 +1,15 @@
-.brand-name {
-  text-decoration: none;
-  font-family: Roboto, sans-serif;
-  font-size: 22px;
-  text-transform: uppercase;
-  color: black;
-  font-style: normal;
-  font-weight: 300;
+.navbar-links {
+  font-family: "Dancing Script", sans-serif;
+  font-size: 30px;
 }
 
-.navbar-brand {
-  display: flex;
+.navbar-link-icons {
+  font-size: 20px;
 }
 
-.brand-name:hover {
-  font-weight: 500;
-  color: #111111;
+.nav-image {
+  width: 35%;
+  min-width: 320px;
 }
 
 .featureImageTitle {
