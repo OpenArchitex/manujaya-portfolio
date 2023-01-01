@@ -2,7 +2,7 @@
 
 - Please refer to [GatsbyJS](https://www.gatsbyjs.org/docs/) and [React](https://reactjs.org/docs/getting-started.html) for documentation on syntax.
 
-- If you see a bug or an issue feel free to open a issue on our [issue tracker](https://github.com/OpenArchitex/CherishCakes/issues/new). Give as much information as possible.
+- If you see a bug or an issue feel free to open a issue on our [issue tracker](https://github.com/OpenArchitex/manujaya-portfolio/issues/new). Give as much information as possible.
 
 ## 🚀 Quick start
 
@@ -12,10 +12,10 @@ Clone this GitHub repository; https://help.github.com/en/github/creating-cloning
 
 1.  **Start developing.**
 
-Navigate into your clone directory (we will call it `CherishCakes`) and start it up.
+Navigate into your clone directory (we will call it `manujaya-portfolio`) and start it up.
 
 ```shell
-cd CherishCakes/
+cd manujaya-portfolio/
 gatsby develop
 ```
 
@@ -25,7 +25,7 @@ Your site is now running at `http://localhost:8000`!
 
 _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-Open the `CherishCakes` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+Open the `manujaya-portfolio` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
