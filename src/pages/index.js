@@ -16,7 +16,7 @@ const getFeaturedImages = featuredImages => {
     const folderName = featuredImage.relativePath.split("/")[0]
     return (
       <Col md className="pb-4">
-        <Link to="/gallery" state={{ folderName }}>
+        <Link to={`/gallery/${folderName}`}>
           <Container className="featureImageContainer">
             <GatsbyImage
               className="featureImage"

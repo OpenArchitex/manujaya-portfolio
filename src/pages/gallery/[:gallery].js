@@ -1,7 +1,7 @@
 import * as React from "react"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 import { Col, Container, Row } from "react-bootstrap"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -27,15 +27,16 @@ const getArraySlices = array => {
 }
 
 const Gallery = ({ location, data }) => {
+  const folderName = location.pathname.split("/")[2].replaceAll("%20", " ")
   const images = data?.allFile.nodes.filter(node =>
-    node.relativePath.includes(location.state?.folderName)
+    node.relativePath.includes(folderName)
   )
   const arraySlices = getArraySlices(images)
 
   return (
     <Layout>
       <Container>
-        <h2 className="text-center py-5">{location.state?.folderName}</h2>
+        <h2 className="text-center py-5">{folderName}</h2>
         <Container>
           {images && arraySlices.map(slice => <Row>{getImages(slice)}</Row>)}
         </Container>
