@@ -59,3 +59,16 @@
     font-size: 35px;
   }
 }
+
+.image-container {
+  cursor: zoom-in;
+}
+
+.modal-image-container {
+  cursor: zoom-out;
+  padding: 0;
+}
+
+.modal-image-body {
+  padding: 0;
+}

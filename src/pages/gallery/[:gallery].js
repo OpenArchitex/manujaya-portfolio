@@ -5,18 +5,8 @@ import Seo from "../../components/seo"
 import { Col, Container, Row } from "react-bootstrap"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-
-const getImages = images => {
-  return images?.map(image => {
-    const portfolioImage = image?.childImageSharp?.gatsbyImageData
-    const folderName = image.relativePath.split("/")[0]
-    return (
-      <Col md className="pb-4">
-        <GatsbyImage image={portfolioImage} alt={folderName} />
-      </Col>
-    )
-  })
-}
+import { useState } from "react"
+import ImageModal from "../../components/image-modal"
 
 const getArraySlices = array => {
   const slices = []
@@ -32,6 +22,29 @@ const Gallery = ({ location, data }) => {
     node.relativePath.includes(folderName)
   )
   const arraySlices = getArraySlices(images)
+  const [show, setShow] = useState(false)
+  const [selectedImage, setSelectedImage] = useState(null)
+  const handleClose = () => setShow(false)
+  const handleShow = image => {
+    setSelectedImage(image)
+    setShow(true)
+  }
+
+  const getImages = images => {
+    return images?.map(image => {
+      const portfolioImage = image?.childImageSharp?.gatsbyImageData
+      const folderName = image.relativePath.split("/")[0]
+      return (
+        <Col
+          md
+          className="pb-4 image-container"
+          onClick={() => handleShow(portfolioImage)}
+        >
+          <GatsbyImage image={portfolioImage} alt={folderName} />
+        </Col>
+      )
+    })
+  }
 
   return (
     <Layout>
@@ -41,6 +54,7 @@ const Gallery = ({ location, data }) => {
           {images && arraySlices.map(slice => <Row>{getImages(slice)}</Row>)}
         </Container>
       </Container>
+      <ImageModal image={selectedImage} show={show} handleClose={handleClose} />
     </Layout>
   )
 }
