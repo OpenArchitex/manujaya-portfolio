@@ -9,18 +9,24 @@ import { useState } from "react"
 import ImageModal from "../../components/image-modal"
 
 const getArraySlices = array => {
-  const slices = []
-  for (let i = 0; i + 3 <= array.length; i += 3) {
-    slices.push(array.slice(i, i + 3))
+  const slices = [[], [], []]
+  for (let i = 0; i < 3; i++) {
+    for (let j = i; j < array.length; j += 3) {
+      slices[i].push(array[j])
+    }
   }
   return slices
 }
 
+const getFileName = relativePath => {
+  return parseInt(relativePath.split("/")[1].split(".")[0])
+}
+
 const Gallery = ({ location, data }) => {
   const folderName = location.pathname.split("/")[2].replaceAll("%20", " ")
-  const images = data?.allFile.nodes.filter(node =>
-    node.relativePath.includes(folderName)
-  )
+  const images = data?.allFile.nodes
+    .filter(node => node.relativePath.includes(folderName))
+    .sort((a, b) => getFileName(a.relativePath) > getFileName(b.relativePath))
   const arraySlices = getArraySlices(images)
   const [show, setShow] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)
@@ -35,13 +41,13 @@ const Gallery = ({ location, data }) => {
       const portfolioImage = image?.childImageSharp?.gatsbyImageData
       const folderName = image.relativePath.split("/")[0]
       return (
-        <Col
+        <Row
           md
-          className="pb-4 image-container"
+          className="pb-2 image-container"
           onClick={() => handleShow(portfolioImage)}
         >
           <GatsbyImage image={portfolioImage} alt={folderName} />
-        </Col>
+        </Row>
       )
     })
   }
@@ -50,9 +56,14 @@ const Gallery = ({ location, data }) => {
     <Layout>
       <Container>
         <h2 className="text-center py-5">{folderName}</h2>
-        <Container>
-          {images && arraySlices.map(slice => <Row>{getImages(slice)}</Row>)}
-        </Container>
+        <Row>
+          {images &&
+            arraySlices.map(slice => (
+              <Col sm className="px-3">
+                {getImages(slice)}
+              </Col>
+            ))}
+        </Row>
       </Container>
       <ImageModal image={selectedImage} show={show} handleClose={handleClose} />
     </Layout>
