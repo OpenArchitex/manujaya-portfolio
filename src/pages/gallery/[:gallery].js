@@ -9,9 +9,9 @@ import { useState } from "react"
 import ImageModal from "../../components/image-modal"
 
 const getArraySlices = array => {
-  const slices = [[], [], []]
-  for (let i = 0; i < 3; i++) {
-    for (let j = i; j < array.length; j += 3) {
+  const slices = [[], [], [], [], []]
+  for (let i = 0; i < 5; i++) {
+    for (let j = i; j < array.length; j += 5) {
       slices[i].push(array[j])
     }
   }
