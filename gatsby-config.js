@@ -12,7 +12,7 @@ module.exports = {
     title: `Endearing Moments`,
     description: `Photography portfolio website - Manujaya Senadeera`,
     author: `OpenArchitex`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://www.endearingmoments.ca`,
   },
   plugins: [
     `gatsby-plugin-image`,
