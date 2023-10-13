@@ -1,6 +1,14 @@
+body {
+  font-family: Raleway, Roboto, sans-serif;
+}
+
 .navbar-links {
-  font-family: "Dancing Script", sans-serif;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.portfolio-item {
+  font-size: 25px;
+  color: #6c757d;
 }
 
 .navbar-link-icons {
@@ -18,46 +26,6 @@
 
 .featureImageContainer {
   position: relative;
-}
-
-@media (hover: hover) {
-  .featureImage:hover {
-    opacity: 0.2;
-    cursor: pointer;
-  }
-
-  .featureImageTitle {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: grey;
-    font-weight: 700;
-    font-family: "Dancing Script", cursive;
-    font-size: 35px;
-  }
-
-  .featureImageContainer:hover .featureImageTitle {
-    display: block;
-  }
-}
-
-@media (hover: none) {
-  .featureImage {
-    opacity: 0.3;
-  }
-
-  .featureImageTitle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-weight: 700;
-    font-family: "Dancing Script", cursive;
-    font-size: 35px;
-  }
 }
 
 .image-container {

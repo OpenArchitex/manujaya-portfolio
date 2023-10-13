@@ -6,7 +6,7 @@ import { fontAwesomeIcons } from "../helpers/fontawesomeicons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { Col, Container, Row } from "react-bootstrap"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 library.add(fontAwesomeIcons)
 
@@ -16,16 +16,13 @@ const getFeaturedImages = featuredImages => {
     const folderName = featuredImage.relativePath.split("/")[0]
     return (
       <Col md className="pb-4">
-        <Link to={`/gallery/${folderName}`}>
-          <Container className="featureImageContainer">
-            <GatsbyImage
-              className="featureImage"
-              image={image}
-              alt={folderName}
-            />
-            <Container className="featureImageTitle">{folderName}</Container>
-          </Container>
-        </Link>
+        <Container className="featureImageContainer">
+          <GatsbyImage
+            className="featureImage"
+            image={image}
+            alt={folderName}
+          />
+        </Container>
       </Col>
     )
   })
