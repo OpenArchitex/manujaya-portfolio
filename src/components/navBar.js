@@ -1,21 +1,54 @@
 import * as React from "react"
-import { Container, Image, Nav, Row } from "react-bootstrap"
+import {
+  Container,
+  DropdownButton,
+  Dropdown,
+  Image,
+  Nav,
+  Row,
+} from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import brandLogo from "../images/brandLogo.svg"
+import { Link } from "gatsby"
 
 const NavBar = () => (
   <>
     <Row>
       <Container className="text-center pt-4">
-        <Image src={brandLogo} className="nav-image" />
+        <Link to="/">
+          <Image src={brandLogo} className="nav-image" />
+        </Link>
       </Container>
     </Row>
     <Row>
       <Nav>
         <Container className="navbar-links d-flex py-4 justify-content-center">
-          <Nav.Link className="link-secondary" href="/">
-            Portfolio
-          </Nav.Link>
+          <DropdownButton
+            variant="none"
+            title={<span className="portfolio-item">Portfolio</span>}
+          >
+            <Dropdown.Item href="/gallery/Birthday and Milestones">
+              <span className="portfolio-item">Birthday and Milestones</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Family Sessions">
+              <span className="portfolio-item">Family Sessions</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Graduation Sessions">
+              <span className="portfolio-item">Graduation Sessions</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Maternity and Newborn">
+              <span className="portfolio-item">Maternity and Newborn</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Portraits">
+              <span className="portfolio-item">Portraits</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Seasonal Mini Sessions">
+              <span className="portfolio-item">Seasonal Mini Sessions</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="/gallery/Weddings">
+              <span className="portfolio-item">Weddings</span>
+            </Dropdown.Item>
+          </DropdownButton>
           <Nav.Link className="link-secondary" href="/about">
             About
           </Nav.Link>
