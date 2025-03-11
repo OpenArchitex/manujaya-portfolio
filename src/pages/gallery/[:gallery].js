@@ -26,7 +26,7 @@ const Gallery = ({ location, data }) => {
   const folderName = location.pathname.split("/")[2].replaceAll("%20", " ")
   const images = data?.allFile.nodes
     .filter(node => node.relativePath.includes(folderName))
-    .sort((a, b) => getFileName(a.relativePath) > getFileName(b.relativePath))
+    .sort((a, b) => getFileName(a.relativePath) - getFileName(b.relativePath))
   const arraySlices = getArraySlices(images)
   const [show, setShow] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)

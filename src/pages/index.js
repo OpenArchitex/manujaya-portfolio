@@ -35,6 +35,7 @@ const IndexPage = ({ data }) => {
       <Container className="py-5 text-center">
         <Row>{getFeaturedImages(featuredImages.slice(0, 3))}</Row>
         <Row>{getFeaturedImages(featuredImages.slice(3, 6))}</Row>
+        <Row>{getFeaturedImages(featuredImages.slice(6, 7))}</Row>
       </Container>
     </Layout>
   )
