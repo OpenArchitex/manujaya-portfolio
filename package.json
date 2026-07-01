@@ -24,7 +24,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.8.3"
+    "prettier": "^3.9.4"
   },
   "engines": {
     "node": "20.x",
